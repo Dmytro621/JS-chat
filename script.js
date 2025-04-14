@@ -57,22 +57,20 @@ class Users {
     saveUsers() {
     localStorage.setItem('users', JSON.stringify(users.map(user => ({ nickname: user.nickname }))));
     }
-
-    giveUser() {
-        let infoUsers = JSON.parse(localStorage.getItem('users')) || [];
-        if (infoUsers) {
-            users = infoUsers.map(user => new Users(user.nickname));
-        }
-    }
-
-    renderUsers() {
-    usersList.innerHTML = '';
-    users.forEach(user => {
-        usersList.innerHTML += `<button class="user-btn">${user.nickname}</button>`;
-    });
-    }
 }
 
+function giveUsers() {
+    let infoUsers = JSON.parse(localStorage.getItem('users')) || []
+    users = infoUsers.map(user => new Users(user.nickname))
+}
+
+function renderUsers() {
+    usersList.innerHTML = ''
+    users.forEach(user => {
+        usersList.innerHTML += `<button class="user-btn">${user.nickname}</button>`
+    })
+    addUsersEvent()
+}
 
 let users = [];
 let activeUser = null
@@ -94,10 +92,10 @@ addUserButton.addEventListener('click', () => {
 
         usersList.innerHTML += `<button class="user-btn">${userNickName}</button>`
         addUserInput.value = ''
+
+        newUser.saveUsers()
     }
 
-    addUsersEvent()
-    users.saveUsers()
 })
 
 
@@ -138,3 +136,14 @@ function addUsersEvent() {
         })
     });
 }
+
+window.addEventListener('load', () => {
+    giveUsers()
+    renderUsers()
+
+    if (users.length > 0) {
+        activeUser = users[0]
+        activeUser.chat.giveMessages()
+        activeUser.chat.renderMessages()
+    }
+})
