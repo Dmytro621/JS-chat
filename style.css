@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+#app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Список пользователей */
+#users-container {
+    width: 250px;
+    background-color: #f0f0f0;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#user-input-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-user-button {
+    padding: 8px 12px;
+    margin-left: 5px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-user-button:hover {
+    background-color: #1e7e34;
+}
+
+#users-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.user-item button {
+    padding: 4px 8px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.user-item button:hover {
+    background-color: #a71d2a;
+}
+
+/* Главный чат */
+#main-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+#chat-container p {
+    margin: 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: max-content;
+    background-color: #3793bd;
+    color: white;
+}
+
+/* Инпут и кнопки под чатом */
+#input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#send-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #0056b3;
+}
+
+#clear-messages {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#clear-messages:hover {
+    background-color: #a71d2a;
+}
+
+#user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#user-list button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
