@@ -94,6 +94,7 @@ addUserButton.addEventListener('click', () => {
         addUserInput.value = ''
 
         newUser.saveUsers()
+        addUsersEvent()
     }
 
 })

@@ -156,12 +156,75 @@ body {
     margin-top: 10px;
     padding: 10px;
 }
-
 #user-list button {
-    padding: 5px 10px;
+    padding: 8px 12px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#user-list button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#user-list button:active {
+    background-color: #003f7f;
+    transform: scale(0.95);
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 768px) {
+    #app-container {
+        flex-direction: column;
+    }
+
+    #users-container {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #main-chat {
+        flex: 1;
+    }
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 480px) {
+    #user-input-container {
+        flex-direction: column;
+    }
+
+    #user-input {
+        margin-bottom: 5px;
+        margin-right: 0;
+    }
+
+    #add-user-button {
+        width: 100%;
+    }
+
+    #input-container {
+        flex-direction: column;
+    }
+
+    #message-input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #send-button,
+    #clear-messages {
+        width: 100%;
+    }
+
+    #clear-messages {
+        margin-left: 0;
+    }
 }
